@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=IM+Fell+DW+Pica:ital@0;1&display=swap" rel="stylesheet">
+    <link rel = "icon" href="/imagenes/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrer Pulse</title>
+</head>
+<body>
+    <header class="header">
+    </header>
+    <article class="body">
+        <h1>Carrer Pulse</h1>
+        <div class="container">
+            <div class="login">
+                <h2>Ingresa a tu cuenta</h2>
+                <form class="login_in" action="/login" method="POST"> 
+                    <input type="email" placeholder="correo electrónico"class = "input" id="user" name="user" required>
+                    <input type="password" placeholder="contraseña" class = "input" id="pass"  name="pass" required>
+                    <input type="submit" value="Login"class="button">
+                </form>
+            </div>
+            <div class="register">
+                <h2>Registrate</h2>
+                <form action="/register" method="GET">
+                    <input type="submit" value="Registrar" class="button">
+                </form>
+                <div class="login_image"> 
+                    <img src="imagenes/logo.png" alt="">
+                </div>
+            </div>
+    </div>
+    </article>
+    <footer class="footer">
+        <div class="info_footer">
+            <p class=""> Carrer Pulse  - @ Todos los derechos reservados</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if (typeof alert != "undefined") { %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>',
+                text : '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton: '<%= showConfirmButton %>',
+                timer : '<%= timer %>',
+            }).then(() => {
+                // window.location.href = '/<%= ruta %>';
+            });
+        </script>
+    <% } %>
+    
+</body>
+</html>

@@ -1,0 +1,137 @@
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/resources/css/styleCompany.css" type="text/css">
+            <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" type="text/css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=IM+Fell+DW+Pica:ital@0;1&display=swap" rel="stylesheet">
+            <link rel = "icon" href="imagenes/logo.png">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Carrer Pulse</title>
+        </head>
+    <body>
+        <header id="header">
+            <div class="logo">
+                <img src="imagenes/logo.png" alt=""></img>
+                <h1>Carrer Pulse</h1>
+            </div>
+            <nav id="nav" class="" id="nav">
+            <a href="#profile" class="" title="">Perfil</a>
+            <a href="#offers" class="" title="">Ofertas</a>
+            <a href="#selection" class="" title="">Selección</a>
+            <a href="/logout" class="" title="">Cerrar sesión</a>
+        </nav>
+        </header>
+        <article id="body">
+            <div class="porfile" id=""> 
+                <h3>Bienvenido</h3>
+                <p>Datos de su empresa</p>
+            </div>
+            <div class="info" id="profile">
+                <p class="registro_in">Tipo de documento</p>
+                <p class="registro_in">Número de documento</p>
+                <p id="type_num">Tipo de documento</p>
+                <p id="num_doc">Número de documento</p>
+                <p class="registro_in">Nombres</p>
+                <p class="registro_in">Tipo de cuenta</p>
+                <p id="name">Nombres</p>
+                <p id="rol">Tipo de cuenta</p>
+                <p class="registro_in">Correo electrónico</p>
+                <p class="registro_in">Ciudad</p>
+                <p id="email">Correo electrónico</p>
+                <p id="city">Ciudad</p>
+            </div>
+            <div>
+                <button class="button">Modificar</button>
+            </div>
+            <div class="container" id="offers">
+                    <h3>Registre las ofertas laborales</h3>
+                    <form class="register_offert" action="/guardar-oferta" method="post" >
+                        <p class="">Nombre de oferta</p>
+                        <input type="text" name="nombre_oferta" placeholder="Nombre de Oferta">
+                        <p class="">Indique la descripción de su oferta laboral</p>
+                        <textarea name="descripcion_oferta" placeholder="Descripción" cols="20" rows="5" wrap="hard"></textarea>
+                        <p class="">Seleccione la carrera de grado</p>
+                        <select class="carrer" name="carrera">
+                            <option value="select">Seleccione acá</option>
+                            <option value="arq">Arquitectura</option>
+                            <option value="der">Derecho</option>
+                            <option value="com">Comunicación</option>
+                            <option value="cont">Contaduria</option>
+                            <option value="admon">Administración</option>
+                            <option value="mkt">Marketing</option>
+                            <option value="stw">Ingeniería de software</option>
+                        </select>
+                        <p class="">Indique las palabras clave o skills del conocimiento que requiere para la oferta</p>
+                        <input type="text" name="palabras_clave" placeholder="Palabra clave">
+                        <input type="submit" value="Registrar" class="button">
+                    </form>
+            </div>
+            <div class="activate" id="selection"> 
+                <h3>Ofertas laborales activas</h3>
+                <p class=""> A continuación podrá ver las ofertas activas </p>
+                <input type="submit"value="Modificar oferta" class ="button">
+                <input type="submit" value="Eliminar oferta" class ="button">
+            </div>
+            <!--
+            <div class="shortlist"> 
+                <h3>Perfiles que se adecuan a tu oferta laboral</h3>
+                <p class=""> De acuerdo a tus palabras clave, estos son los perfiles que se adaptan a las empresas</p>
+                <table class="shoertlist">
+                    <thead>
+                        <tr>
+                            <th>Estudiante</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Estudiante Uno</td>
+                            <td><input type="submit" value="Contactar"></td>
+                        </tr>
+                        <tr>
+                            <td>Estudiante Dos</td>
+                            <td><input type="submit" value="Contactar"></td>
+                        </tr>
+                        <tr>
+                            <td>Estudiante Tres</td>
+                            <td><input type="submit" value="Contactar"></td>
+                        </tr>
+                        <tr>
+                            <td>Estudiante Cuatro</td>
+                            <td><input type="submit" value="Contactar"></td>
+                        </tr>
+                        <tr>
+                            <td>Estudiante Cinco</td>
+                            <td><input type="submit" value="Contactar"></td>
+                        </tr>
+                </table>
+            </div>
+        
+            <div class="chat-container">
+                <label for="active_chat">Desactivar el chat:</label>
+                <input type="checkbox" id="active_chat" name="active_chat">
+                <div class="chat">
+                    <div id="chat-box">
+                        <div id="chat-messages"></div>
+                        <div id="input-container">
+                            <input type="text" id="mensaje" placeholder="Escribe tu mensaje...">
+                            <button class="button" onclick="enviarMensaje()">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </article>
+        <footer class="footer">
+            <div class="info_footer">
+                <p class=""> Carrer Pulse  - @ Todos los derechos reservados</p>
+        </footer>
+        <script src="/carrerPulse/Servidor/ofertas_laborales.js">
+            document.addEventListener('DOMContentLoaded', renderizarEmpresas);
+        </script>
+
+    </body>
+
+    </html> 

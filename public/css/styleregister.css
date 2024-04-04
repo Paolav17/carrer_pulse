@@ -1,0 +1,86 @@
+body {
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: "Gilda Display", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #27374D;
+    border: .2em solid;
+    border-radius: 2em;
+    box-shadow: 5px 5px .5px #FFD700;
+    color: white;
+    width: 50%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 40px;
+    margin: auto; /* Agrega esta línea para centrar el div horizontalmente */
+}
+
+.formulario_registro {
+    width: 100%; 
+    max-width: 400px; 
+}
+
+
+.formulario_registro p, .formulario_registro select, .formulario_registro input {
+    margin: 10px 0; 
+    width: 100%; 
+}
+
+.input {
+    padding: 5px;
+    margin: 10px;
+}
+
+.button {
+    background-color: #FFD700;
+    border-radius: 2em;
+    width: 10em;
+    margin: 1em;
+}
+
+.button:hover {
+    background-color: #a8a7a5;
+    color: white;
+}
+
+.login img {
+    width: 13em;
+    height: 13em;
+    object-fit: scale-down;
+    margin: auto;
+    opacity: 0.8;
+    background-color: #27374D;
+}   
+
+.footer {
+    background-color: #9DB2BF;
+    position: static; 
+    width: 100%;
+    padding: 2px;
+    flex-shrink: 0;
+}
+
+input.invalid {
+    background-color: #ffcccc; 
+}
+
+@media only screen and (max-width: 800px) {
+    .login, .register {
+        width: 100%;
+        
+    }
+    .footer {
+        flex-shrink: 0;
+    }
+}
