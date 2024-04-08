@@ -32,6 +32,10 @@ router.get('/student', authControler.isAuthenticated, (req, res) => {
     res.render('student', { user: req.user });
 });
 
+router.get('/company', authControler.isAuthenticated, (req, res) => {
+    console.log(req.user); // Log the user object
+    res.render('company', { user: req.user });
+});
 
 // //     console.log("Se ha accedido a la ruta /student");
 // //     // Verificar si el usuario está autenticado
