@@ -1,0 +1,203 @@
+body {
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Helvetica;
+    font-style: normal;
+    background-color: #ecefed;  
+}
+.button {
+    background-color: #FFD700;
+    border-radius: 2em;
+    width: 10em;
+    margin: 1em;
+}
+
+.button:hover {
+    background-color: #a8a7a5;
+    color: white;
+}
+
+.porfile{
+    position: static; 
+    width: 100%;
+    padding: px;
+    align-items: center;
+    font-size: 25px;
+
+}
+header {
+    background-color: #9DB2BF;
+    position: static; 
+    width: 100%;
+    padding: 2px;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+a{
+    text-decoration: none;
+    color: #27374D ;
+    padding-right: 10px;
+}
+nav a:hover{
+    color: #bea443da;
+    
+}
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+}
+img {
+    width: 10%;
+    object-fit: scale-down;
+    margin: auto;
+    opacity: 0.8;
+    background-color: #27374D;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Espacio entre columnas y filas */
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px; /* Reduzco el espacio entre columnas a 15px */
+    justify-items: stretch;
+    align-items: center;
+    margin: auto;
+}
+
+.info p {
+    margin: 5px 0; /* Agrego un pequeño margen vertical a los elementos p dentro de .info */
+}
+
+.info p.registro_in{
+    font-weight: bold;
+}
+
+.activate, .container{
+    align-items: center;
+    justify-content: center;
+    background-color: #27374D;
+    border: .2em solid;
+    border-radius: 2em;
+    box-shadow: 5px 5px .5px #FFD700;
+    color: white;
+    width: 70%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 40px;
+    margin: auto; /* Agrega esta línea para centrar el div horizontalmente */
+}
+
+.register_offert {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Espacio entre columnas y filas */
+}
+
+.register_offert label {
+    color: #FFD700; /* Color de etiquetas */
+    font-size: 16px; /* Tamaño de fuente de etiquetas */
+}
+
+.register_offert .small-input {
+    width: 100%; /* O ajusta el ancho según tus necesidades */
+    border-radius: 8px; /* Borde redondeado */
+    padding: 8px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espaciado entre campos */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.register_offert select {
+    width: 100%; /* O ajusta el ancho según tus necesidades */
+    border-radius: 8px; /* Borde redondeado */
+    padding: 8px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espaciado entre campos */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.register_offert input[type="file"] {
+    width: 100%; /* O ajusta el ancho según tus necesidades */
+    border-radius: 8px; /* Borde redondeado */
+    padding: 8px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espaciado entre campos */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.footer {
+    background-color: #9DB2BF;
+    position: static; 
+    width: 100%;
+    padding: 2px;
+    flex-shrink: 0;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #8e8e8e;
+}
+
+
+
+.chat-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    height: 20%;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999; /* Asegura que el chat esté por encima del contenido */
+    /*display: none;  Oculta el chat inicialmente */
+}
+
+#chat-box {
+    padding: 10px;
+}
+
+@media only screen and (max-width: 866px) {
+    header {
+        width: 100%;
+        padding: 10px;
+    }
+    /*.nav{
+        display: none;*/
+        
+    .nav{ 
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 2em;
+    }
+    .nav-list{
+        flex-direction: column;
+        align-items: end;
+    }
+    .footer {
+        flex-shrink: 0;
+    }
+}
