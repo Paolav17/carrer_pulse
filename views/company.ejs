@@ -50,7 +50,7 @@
                     <% } %>
             </div>
             <div>
-                <button class="button">Modificar</button>
+                
                 <div class="container" id="offers">
                     <h3>Registre las ofertas laborales</h3>
                     <form class="register_offert" action="/offers" method="post"  >
@@ -77,8 +77,9 @@
             </div>
             <div class="activate" id="selection"> 
                 <h3>Ofertas laborales activas</h3>
+                <button id="toggleOffersButton" class="button">Mostrar</button>
                 <p class=""> A continuación podrá ver las ofertas activas </p>
-                <table>
+                <table style="display: none;">
                     <thead>
                         <tr>
                             <th>Nombre de oferta</th>
@@ -163,16 +164,49 @@
                 <p class=""> Carrer Pulse  - @ Todos los derechos reservados</p>
             </div>
         </footer>
-        <!-- <script src="/carrerPulse/Servidor/">
-            document.addEventListener('DOMContentLoaded', renderizarEmpresas);
-        </script> -->
+        <script>
+            function showActiveOffers() {
+                fetch('/ruta/a/tu/endpoint/para/obtener/ofertas/activas')
+                    .then(response => response.json())
+                    .then(data => {
+                        const activeOffersTableBody = document.getElementById('activeOffersTableBody');
+                        activeOffersTableBody.innerHTML = ''; // Limpiar contenido existente
     
-        
-        <% if (typeof alert !== 'undefined' && alert) { %>
-            <div class="alert">
-                <p><%= alert %></p>
-            </div>
-        <% } %>
+                        if (data.length > 0) {
+                            data.forEach(oferta => {
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                    <td>${oferta.offers_name}</td>
+                                    <td>${oferta.offers_description}</td>
+                                    <td>${oferta.offers_degree}</td>
+                                    <td>${oferta.offers_skills}</td>
+                                    <td>
+                                        <button class="button">Editar</button>
+                                        <button class="button">Borrar</button>
+                                    </td>
+                                `;
+                                activeOffersTableBody.appendChild(row);
+                            });
+                        } else {
+                            const row = document.createElement('tr');
+                            row.innerHTML = '<td colspan="5">No se encontraron ofertas laborales.</td>';
+                            activeOffersTableBody.appendChild(row);
+                        }
+    
+                        const table = document.querySelector('.activate table');
+                        table.style.display = 'table'; // Mostrar la tabla después de agregar contenido
+                    })
+                    .catch(error => {
+                        console.error('Error al obtener las ofertas activas:', error);
+                    });
+            }
+        </script>
+    
+    <% if (typeof alert !== 'undefined' && alert) { %>
+    <div class="alert">
+        <p><%= alert %></p>
+    </div>
+    <% } %>
 
     </body>
 

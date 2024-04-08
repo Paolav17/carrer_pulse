@@ -8,6 +8,7 @@ const { error } = require('console');
 const { resume } = require('../db/db');
 
 
+
 exports.auth = async (req, res, next) => {
     try {
         console.log('Solicitud POST recibida en /auth');

@@ -2,6 +2,7 @@ const express = require('express');
 const authControler = require('./controllers/authControler');
 const loginControler = require('./controllers/loginControler')
 const companyControler = require('./controllers/companyControler')
+const activeOffers = require ('./controllers/activeOffers')
 const router = express.Router();
 const bcryptjs = require('bcryptjs');
 const conexion = require('./db/db');
@@ -13,7 +14,7 @@ const {promisify} = require ('util')
 router.post('/auth', authControler.auth)
 router.post('/login', loginControler.login )
 router.post('/offers', companyControler.offers )
-
+// router.post('/company/activate', activeOffers)
 
     
 
@@ -31,7 +32,7 @@ router.get('/student', authControler.isAuthenticated, (req, res) => {
     res.render('student', { user: req.user });
 });
 
-// // router.get('/student', authControler.isAuthenticated, (req, res) => {
+
 // //     console.log("Se ha accedido a la ruta /student");
 // //     // Verificar si el usuario está autenticado
 // //     if (req.email_user && req.email_user.email_user) {
@@ -64,34 +65,6 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
-
-// router.get('/company', authControler.isAuthenticated,(req, res) => {
-//     console.log('está llegando hasta el usuario')
-//     console.log(req.user); 
-//     const user_id = req.user.user_id;
-//     req.session.user_id = user_id;
-//     res.render('company', { user: req.user });
-    
-// });
-
-// Ruta GET para la página de estudiante
-// router.get('/student', (req, res) => {
-//     res.render('student');
-// });
-// router.get('/company', authControler.isAuthenticated, async (req, res) => {
-//     try {
-//         console.log('está llegando hasta el usuario');
-//         console.log(req.user);
-//         const user_id = req.user.user_id;
-//         req.session.user_id = user_id;
-//         const ofertas = await conexion.query('SELECT * FROM offers_comp WHERE user_id = ?', [user_id]);
-//         console.log(ofertas);
-//         res.render('company', { user: req.user, ofertas: ofertas });
-//     } catch (error) {
-//         console.error('Error al obtener las ofertas del usuario:', error);
-//         return res.status(500).json({ error: 'Error al obtener las ofertas del usuario' });
-//     }
-// });
 router.get('/company', authControler.isAuthenticated, async (req, res) => {
     try {
         console.log('Está llegando hasta el usuario');
@@ -99,14 +72,14 @@ router.get('/company', authControler.isAuthenticated, async (req, res) => {
         const user_id = req.user.user_id;
         req.session.user_id = user_id;
 
-        try {
-            const ofertas = await conexion.query('SELECT * FROM offers_comp WHERE user_id = ?', [user_id]);
-            console.log(ofertas);
-            res.render('company', { user: req.user, ofertas: ofertas });
-        } catch (error) {
-            console.error('Error al obtener las ofertas del usuario:', error);
-            return res.status(500).json({ error: 'Error al obtener las ofertas del usuario' });
-        }
+        // try {
+        //     const ofertas = await conexion.query('SELECT * FROM offers_comp WHERE user_id = ?', [user_id]);
+        //     console.log(ofertas);
+        //     res.render('company', { user: req.user, ofertas: ofertas });
+        // } catch (error) {
+        //     console.error('Error al obtener las ofertas del usuario:', error);
+        //     return res.status(500).json({ error: 'Error al obtener las ofertas del usuario' });
+        // }
     } catch (error) {
         console.error('Error en la ruta /company:', error);
         return res.status(500).json({ error: 'Error en la ruta /company' });

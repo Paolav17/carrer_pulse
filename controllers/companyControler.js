@@ -10,6 +10,7 @@ const config = require('./config');
 const routes = require ('../routes')
 const { getUserData } = require('../servidor');
 
+
  exports.offers = async (req, res, next) => {
      try {
 
@@ -41,26 +42,4 @@ const { getUserData } = require('../servidor');
  };
 
 
-//  exports.showOff = async (req, res) => {
-//     try {
-//         const user_id = req.user.user_id;
-//         const ofertas = await conexion.query('SELECT * FROM offers_comp WHERE user_id = ?', [user_id]);
-//         console.log (ofertas)
-//         res.render('ofertas', { ofertas: ofertas });
-//     } catch (error) {
-//         console.error('Error al obtener las ofertas del usuario:', error);
-//         return console.log("Error al obtener las ofertas del usuario");
-//     }
-// };
 
-exports.showOff = async (req, res) => {
-    try {
-        const user_id = req.user.user_id;
-        const ofertas = await conexion.query('SELECT * FROM offers_comp WHERE user_id = ?', [user_id]);
-        console.log('Ofertas obtenidas con éxito:', ofertas);
-        res.render('ofertas', { ofertas: ofertas });
-    } catch (error) {
-        console.error('Error al obtener las ofertas del usuario:', error);
-        res.status(500).send('Error al obtener las ofertas del usuario');
-    }
-};
