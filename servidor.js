@@ -21,7 +21,7 @@ app.set('view engine', 'ejs');
 // seteo de la carpeta public de mis archivos estáticos
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
-
+app.use(cookieParset());
 //seteamos las variables de entorno
 dotenv.config({path:'/env/.env'})
 
@@ -56,8 +56,11 @@ const getUserData = async (user_id) => {
 };
 
 
+
+
 //se define el puerto donde debe escuchar
 const PUERTO=3001;
 app.listen(PUERTO, () => {
     console.log("servidor ejecutandose");
 });
+module.exports = app;
